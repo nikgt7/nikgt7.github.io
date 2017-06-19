@@ -7333,7 +7333,7 @@ body {
   font-size: 15px;
   line-height: 26px;
   color: #818892;
-  background: #f5f6f7;
+  background:/*#f5f6f7;*/ #fff;
 }
 
 a {
@@ -7499,8 +7499,8 @@ h1, h2, h3, h4, h5, h6 {
   float: left;
   width: 100%;
   position: relative;
-  padding-top: 4em;
-  padding-bottom: 4em;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 @media screen and (max-width: 480px) {
   #fh5co-header {
@@ -7688,7 +7688,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #fh5co-board .item {
   margin: 10px 10px 20px 10px;
-  background: #fff;
+  background: /*#fff;*/#fdfdba;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -7696,7 +7696,8 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
   -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
+  /*box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);*/
+  box-shadow: 8px 6px 7px 0px rgba(0, 0, 0, 0.14);
 }
 #fh5co-board .item a {
   display: block;
@@ -7707,11 +7708,14 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 24px;
 }
 #fh5co-board .item .fh5co-item-title {
-  font-family: "Montserrat", arial, sans-serif;
-  font-size: 17px;
-  line-height: 24px;
-  margin: 0;
-  padding: 0;
+  font-family: /*'Pacifico', cursive;*/'Loved by the King', cursive;
+  font-size: 25px;
+  line-height: 13px;
+  font-weight: 100;
+  padding: 15px;
+  position: relative;
+  top: 6px;
+  left: -5px;
 }
 #fh5co-board .item img {
   max-width: 100%;
@@ -7864,7 +7868,15 @@ pre {
 }
 
 #fh5co-footer {
-  padding: 3em  0;
+  padding: 1em  0;
+}
+#fh5co-footer  i{
+  font-size: 30px;
+  padding-right: 10px;
+  color: #444;
+}
+#fh5co-footer  a{
+  text-decoration: none;
 }
 @media screen and (max-width: 768px) {
   #fh5co-footer {
