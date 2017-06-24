@@ -4,8 +4,14 @@ app.config(['$routeProvider', function ($routeProvider) {
   $routeProvider
     .when("/", {templateUrl: "pages/main.html", controller: "PageCtrl"})
     .when("/about", {templateUrl: "pages/about.html", controller: "AboutCtrl"})
-    .when("/comics", {templateUrl: "pages/comics.html", controller: "AboutCtrl"})
+    .when("/comics", {templateUrl: "pages/comics.html", controller: "PageCtrl"})
     .when("/pricing", {templateUrl: "pages/pricing.html", controller: "AboutCtrl"})
+    .when("/bookillustrations", {templateUrl: "pages/bookillustrations.html", controller: "AboutCtrl"})
+    .when("/characterdesign", {templateUrl: "pages/characterdesign.html", controller: "AboutCtrl"})
+    .when("/websitedesign", {templateUrl: "pages/websitedesign.html", controller: "AboutCtrl"})
+    .when("/paintings", {templateUrl: "pages/paintings.html", controller: "AboutCtrl"})
+    .when("/wallpaintings", {templateUrl: "pages/wallpaintings.html", controller: "AboutCtrl"})
+    .when("/ofto", {templateUrl: "pages/ofto.html", controller: "AboutCtrl"})
 
     .when("/404", {templateUrl: "pages/404.html", controller: "AboutCtrl"})	
 	.otherwise({ redirectTo: '/404' });
@@ -16,17 +22,24 @@ app.controller('AboutCtrl', function ( ) {
 });
 
 app.controller('PageCtrl', function (/* $scope, $location, $http */) {
-// iPad and iPod detection	
+
 	var isiPad = function(){
 		return (navigator.platform.indexOf("iPad") != -1);
 	};
 
-	var isiPhone = function(){
-	    return (
+	var isPhone =
+			(navigator.platform.indexOf("Android") != -1) || 
+			(navigator.platform.indexOf("webOS") != -1) || 
+			(navigator.platform.indexOf("BlackBerry") != -1) || 
+			(navigator.platform.indexOf("BB") != -1) || 
+			(navigator.platform.indexOf("PlayBook") != -1) || 
+			(navigator.platform.indexOf("IEMobile") != -1) || 
+			(navigator.platform.indexOf("Windows Phone") != -1) || 
+			(navigator.platform.indexOf("Kindle") != -1) || 
+			(navigator.platform.indexOf("Silk") != -1) || 
+			(navigator.platform.indexOf("Opera Mini") != -1) || 
 			(navigator.platform.indexOf("iPhone") != -1) || 
-			(navigator.platform.indexOf("iPod") != -1)
-	    );
-	};
+			(navigator.platform.indexOf("iPod") != -1);
 
 	// OffCanvass
 	var offCanvass = function() {
@@ -99,7 +112,7 @@ app.controller('PageCtrl', function (/* $scope, $location, $http */) {
 	};
 	
 	$(function(){
-		//magnifPopup();
+		magnifPopup();
 		//offCanvass();
 		mobileMenuOutsideClick();
 		animateBoxWayPoint();

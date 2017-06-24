@@ -7469,6 +7469,15 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
+.fh5co-menu-btn-sm {
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  float: right;
+  margin-top: -23px;
+  font-family: "Montserrat", arial, sans-serif;
+  color: #444;
+}
 .fh5co-menu-btn {
   font-size: 15px;
   letter-spacing: 1px;
@@ -7480,7 +7489,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .fh5co-menu-btn a {
 	text-decoration: none;
-  color: #444;
+	color: #444;
 }
 
 .fh5co-menu-btn i {
@@ -7688,7 +7697,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #fh5co-board .item {
   margin: 10px 10px 20px 10px;
-  background: /*#fff;*/#fdfdba;
+  background: /*#fff; #fdfdba; */ #FFFFE5;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -7938,8 +7947,8 @@ pre {
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  content: "\e116";
   content: "\e042";
+  /* content: "\e042"; */
   position: absolute;
   top: 0;
   left: 0;
