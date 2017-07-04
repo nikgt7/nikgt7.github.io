@@ -9,6 +9,7 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when("/bookillustrations", {templateUrl: "pages/bookillustrations.html", controller: "AboutCtrl"})
     .when("/characterdesign", {templateUrl: "pages/characterdesign.html", controller: "AboutCtrl"})
     .when("/websitedesign", {templateUrl: "pages/websitedesign.html", controller: "AboutCtrl"})
+    .when("/digitaldesign", {templateUrl: "pages/digitaldesign.html", controller: "AboutCtrl"})
     .when("/paintings", {templateUrl: "pages/paintings.html", controller: "AboutCtrl"})
     .when("/wallpaintings", {templateUrl: "pages/wallpaintings.html", controller: "AboutCtrl"})
     .when("/ofto", {templateUrl: "pages/ofto.html", controller: "AboutCtrl"})

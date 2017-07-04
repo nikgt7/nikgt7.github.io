@@ -7696,7 +7696,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #fh5co-board .item {
-  margin: 10px 10px 20px 10px;
+  margin: 10px 10px 20px 10px; 
   background: /*#fff; #fdfdba; */ #FFFFE5;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -7706,7 +7706,7 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
   -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
   /*box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);*/
-  box-shadow: 8px 6px 7px 0px rgba(0, 0, 0, 0.14);
+  /* box-shadow: 8px 6px 7px 0px rgba(0, 0, 0, 0.14); */
 }
 #fh5co-board .item a {
   display: block;
@@ -7743,6 +7743,30 @@ h1, h2, h3, h4, h5, h6 {
 
 .js .animate-box {
   opacity: 0;
+}
+
+.animate-box .layer {
+	display: none;
+	opacity: 0;
+	transition: visibility 0s, opacity 0.1s linear;
+}
+
+.animate-box:hover .layer {
+    background-color: rgba(248, 247, 216, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+	opacity: 1;
+	display:block;
+	text-align:right;
+	padding:10px 5px 0 0;
+	
+	font-family:  "Montserrat", arial, sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+	color: black;
 }
 
 pre {
@@ -8341,3 +8365,6 @@ a > img.fh5co-align-center {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+
+
