@@ -65,11 +65,12 @@
 	</head>
 	<body ng-app="nikApp">		
 		
-	<header id="fh5co-header" role="banner">
+	<header id="fh5co-header" role="banner" ng-controller="MainCtrl">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-12">					
-					<a class="navbar-brand" href="#/">Nicolas Demetriou</a>	
+				<div class="col-md-12">	
+					<a ng-class="{ 'navbar-brand-sm' : isPhone, 'navbar-brand' : !isPhone}" href="#/">Nicolas Demetriou</a>	
+					<span ng-class="{ 'navbar-brand-subtitle-sm' : isPhone, 'navbar-brand-subtitle' : !isPhone}">artist, illustrator</span>
 					<div ng-class="{ 'fh5co-menu-btn-sm': isPhone, 'fh5co-menu-btn': !isPhone }">
 						<a href="#/pricing">&nbsp;Pricing</a> |
 						<a href="#/about">About Me&nbsp;</a> 						

@@ -1527,7 +1527,7 @@ h1, .h1,
 h2, .h2,
 h3, .h3 {
   margin-top: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 h1 small,
 h1 .small, .h1 small,
@@ -7474,7 +7474,7 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 1px;
   text-transform: uppercase;
   float: right;
-  margin-top: -23px;
+  margin-top: 0px;
   font-family: "Montserrat", arial, sans-serif;
   color: #444;
 }
@@ -7487,7 +7487,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Montserrat", arial, sans-serif;
   color: #444;
 }
-.fh5co-menu-btn a {
+.fh5co-menu-btn a , .fh5co-menu-btn-sm a{
 	text-decoration: none;
 	color: #444;
 }
@@ -7601,14 +7601,47 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
   display: block;
   float: none !important;
-  width: 200px;
-  margin: 0 auto;
+  /* width: 200px; */
+  margin: 20px 0 -5px 0;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 21px;
+  /* letter-spacing: 2px; */
+  font-size: 30px;
   font-family: "Montserrat", arial, sans-serif;
   color: #000;
 }
+
+#fh5co-header .navbar-brand-sm {
+  text-align: left;
+  font-weight: bold;
+  display: block;
+  float: none !important;
+  margin: 20px 0 -5px 0;
+  text-transform: uppercase;
+  font-size: 25px;
+  font-family: "Montserrat", arial, sans-serif;
+  color: #000;
+}
+
+#fh5co-header .navbar-brand-subtitle {
+  text-align: center;
+  display: block;
+  float: none !important;
+  margin: 0;
+  font-size: 18px;
+  font-family: "Pacifico", arial, sans-serif;
+  color:#868686;
+}
+
+#fh5co-header .navbar-brand-subtitle-sm {
+  text-align: left;
+  display: block;
+  float: none !important;
+  margin: 0;
+  font-size: 12px;
+  font-family: "Pacifico", arial, sans-serif;
+  color:#868686;
+}
+
 #fh5co-header .navbar-brand:hover {
   color: #404040;
 }
@@ -7752,7 +7785,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .animate-box:hover .layer {
-    background-color: rgba(248, 247, 216, 0.5);
+    background-color: rgba(0, 0, 0, 0.3);
     position: absolute;
     top: 0;
     left: 0;
@@ -7766,7 +7799,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-family:  "Montserrat", arial, sans-serif;
 	font-size: 20px;
 	font-weight: bold;
-	color: black;
+	color: white;
 }
 
 pre {

@@ -1,34 +1,11 @@
 var app = angular.module('nikApp', ['ngRoute']);
 
-app.config(['$routeProvider', function ($routeProvider) {
-  $routeProvider
-    .when("/", {templateUrl: "pages/main.html", controller: "PageCtrl"})
-    .when("/about", {templateUrl: "pages/about.html", controller: "AboutCtrl"})
-    .when("/comics", {templateUrl: "pages/comics.html", controller: "PageCtrl"})
-    .when("/pricing", {templateUrl: "pages/pricing.html", controller: "AboutCtrl"})
-    .when("/bookillustrations", {templateUrl: "pages/bookillustrations.html", controller: "AboutCtrl"})
-    .when("/characterdesign", {templateUrl: "pages/characterdesign.html", controller: "AboutCtrl"})
-    .when("/websitedesign", {templateUrl: "pages/websitedesign.html", controller: "AboutCtrl"})
-    .when("/digitaldesign", {templateUrl: "pages/digitaldesign.html", controller: "AboutCtrl"})
-    .when("/paintings", {templateUrl: "pages/paintings.html", controller: "AboutCtrl"})
-    .when("/wallpaintings", {templateUrl: "pages/wallpaintings.html", controller: "AboutCtrl"})
-    .when("/ofto", {templateUrl: "pages/ofto.html", controller: "AboutCtrl"})
-
-    .when("/404", {templateUrl: "pages/404.html", controller: "AboutCtrl"})	
-	.otherwise({ redirectTo: '/404' });
-}]);
-
-app.controller('AboutCtrl', function ( ) {
-	console.log("Working OK");
-});
-
-app.controller('PageCtrl', function (/* $scope, $location, $http */) {
-
+app.controller('MainCtrl',  ['$scope', function($scope) {
 	var isiPad = function(){
 		return (navigator.platform.indexOf("iPad") != -1);
 	};
 
-	var isPhone =
+	$scope.isPhone = 
 			(navigator.platform.indexOf("Android") != -1) || 
 			(navigator.platform.indexOf("webOS") != -1) || 
 			(navigator.platform.indexOf("BlackBerry") != -1) || 
@@ -41,6 +18,31 @@ app.controller('PageCtrl', function (/* $scope, $location, $http */) {
 			(navigator.platform.indexOf("Opera Mini") != -1) || 
 			(navigator.platform.indexOf("iPhone") != -1) || 
 			(navigator.platform.indexOf("iPod") != -1);
+}]);
+
+app.config(['$routeProvider', function ($routeProvider) {
+  $routeProvider
+    .when("/", {templateUrl: "pages/main.html", controller: "PageCtrl"})
+    .when("/about", {templateUrl: "pages/about.html", controller: "AboutCtrl"})
+    .when("/comics", {templateUrl: "pages/comics.html", controller: "PageCtrl"})
+    .when("/pricing", {templateUrl: "pages/pricing.html", controller: "AboutCtrl"})
+    .when("/bookillustrations", {templateUrl: "pages/bookillustrations.html", controller: "PageCtrl"})
+    .when("/characterdesign", {templateUrl: "pages/characterdesign.html", controller: "PageCtrl"})
+    .when("/websitedesign", {templateUrl: "pages/websitedesign.html", controller: "PageCtrl"})
+    .when("/digitaldesign", {templateUrl: "pages/digitaldesign.html", controller: "PageCtrl"})
+    .when("/paintings", {templateUrl: "pages/paintings.html", controller: "PageCtrl"})
+    .when("/wallpaintings", {templateUrl: "pages/wallpaintings.html", controller: "PageCtrl"})
+    .when("/ofto", {templateUrl: "pages/ofto.html", controller: "PageCtrl"})
+
+    .when("/404", {templateUrl: "pages/404.html", controller: "AboutCtrl"})	
+	.otherwise({ redirectTo: '/404' });
+}]);
+
+app.controller('AboutCtrl', function ( ) {
+	console.log("Working OK");
+});
+
+app.controller('PageCtrl', function () {
 
 	// OffCanvass
 	var offCanvass = function() {
