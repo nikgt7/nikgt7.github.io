@@ -8,9 +8,9 @@ app.controller('MainCtrl',  ['$scope', function($scope) {
 	$scope.isPhone = getMobileOperatingSystem();
 			
 	function getMobileOperatingSystem() {
-	  var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-
-		  // Windows Phone must come first because its UA also contains "Android"
+		var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+		
+		// Windows Phone must come first because its UA also contains "Android"
 		if (/windows phone/i.test(userAgent)) {
 			return true;
 		}
@@ -23,13 +23,17 @@ app.controller('MainCtrl',  ['$scope', function($scope) {
 		if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
 			return true;
 		}
+		
+		if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(userAgent)){
+			return true;
+		}
 
 		return false;
 	}
 }]);
 
 app.config(['$routeProvider','$locationProvider', function ($routeProvider, $locationProvider) {
-  $locationProvider.html5Mode(true);
+  $locationProvider.html5Mode(false);
   $routeProvider
     .when("/", {templateUrl: "pages/main.html", controller: "PageCtrl"})
     .when("/about", {templateUrl: "pages/about.html", controller: "AboutCtrl"})
