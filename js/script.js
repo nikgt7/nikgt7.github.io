@@ -5,22 +5,31 @@ app.controller('MainCtrl',  ['$scope', function($scope) {
 		return (navigator.platform.indexOf("iPad") != -1);
 	};
 
-	$scope.isPhone = 
-			(navigator.platform.indexOf("Android") != -1) || 
-			(navigator.platform.indexOf("webOS") != -1) || 
-			(navigator.platform.indexOf("BlackBerry") != -1) || 
-			(navigator.platform.indexOf("BB") != -1) || 
-			(navigator.platform.indexOf("PlayBook") != -1) || 
-			(navigator.platform.indexOf("IEMobile") != -1) || 
-			(navigator.platform.indexOf("Windows Phone") != -1) || 
-			(navigator.platform.indexOf("Kindle") != -1) || 
-			(navigator.platform.indexOf("Silk") != -1) || 
-			(navigator.platform.indexOf("Opera Mini") != -1) || 
-			(navigator.platform.indexOf("iPhone") != -1) || 
-			(navigator.platform.indexOf("iPod") != -1);
+	$scope.isPhone = getMobileOperatingSystem();
+			
+	function getMobileOperatingSystem() {
+	  var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+		  // Windows Phone must come first because its UA also contains "Android"
+		if (/windows phone/i.test(userAgent)) {
+			return true;
+		}
+
+		if (/android/i.test(userAgent)) {
+			return true;
+		}
+
+		// iOS detection from: http://stackoverflow.com/a/9039885/177710
+		if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+			return true;
+		}
+
+		return false;
+	}
 }]);
 
-app.config(['$routeProvider', function ($routeProvider) {
+app.config(['$routeProvider','$locationProvider', function ($routeProvider, $locationProvider) {
+  $locationProvider.html5Mode(true);
   $routeProvider
     .when("/", {templateUrl: "pages/main.html", controller: "PageCtrl"})
     .when("/about", {templateUrl: "pages/about.html", controller: "AboutCtrl"})
@@ -36,6 +45,7 @@ app.config(['$routeProvider', function ($routeProvider) {
 
     .when("/404", {templateUrl: "pages/404.html", controller: "AboutCtrl"})	
 	.otherwise({ redirectTo: '/404' });
+	
 }]);
 
 app.controller('AboutCtrl', function ( ) {
