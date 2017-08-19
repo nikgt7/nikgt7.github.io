@@ -33,7 +33,7 @@ app.controller('MainCtrl',  ['$scope', function($scope) {
 }]);
 
 app.config(['$routeProvider','$locationProvider', function ($routeProvider, $locationProvider) {
-  $locationProvider.html5Mode(false);
+  $locationProvider.html5Mode(true);
   $routeProvider
     .when("/", {templateUrl: "pages/main.html", controller: "PageCtrl"})
     .when("/about", {templateUrl: "pages/about.html", controller: "AboutCtrl"})
