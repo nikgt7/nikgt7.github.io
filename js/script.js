@@ -32,8 +32,8 @@ app.controller('MainCtrl',  ['$scope', function($scope) {
 	}
 }]);
 
-app.config(['$routeProvider','$locationProvider','$window', function ($routeProvider, $locationProvider,$window) {
-	if($window.history && $window.history.pushState){
+app.config(['$routeProvider','$locationProvider', function ($routeProvider, $locationProvider) {
+	if(window.history && window.history.pushState){
 		$locationProvider.html5Mode(true);
 	}
   $locationProvider.html5Mode(true);
