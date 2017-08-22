@@ -32,11 +32,8 @@ app.controller('MainCtrl',  ['$scope', function($scope) {
 	}
 }]);
 
-app.config(['$routeProvider','$locationProvider', function ($routeProvider, $locationProvider) {
-	if(window.history && window.history.pushState){
-		$locationProvider.html5Mode(true);
-	}
-  $locationProvider.html5Mode(true);
+app.config(['$routeProvider', function ($routeProvider) {
+	
   $routeProvider
     .when("/", {templateUrl: "pages/main.html", controller: "PageCtrl"})
     .when("/about", {templateUrl: "pages/about.html", controller: "AboutCtrl"})
