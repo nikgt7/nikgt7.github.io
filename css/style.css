@@ -7780,6 +7780,10 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0;
 }
 
+.animate-box .sm {
+	width: 150px;
+}
+
 .animate-box .layer {
 	display: none;
 	opacity: 0;
